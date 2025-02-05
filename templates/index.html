@@ -4,12 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Group Media Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 2em 0;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        p {
+            font-size: 1.2em;
+            margin-top: 1em;
+            color: #555;
+        }
+        nav {
+            text-align: center;
+            margin-top: 2em;
+        }
+        nav a {
+            font-size: 1.2em;
+            margin: 0 20px;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav a:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to Our Group Website</h1>
-    <p>This is a simple website where we can upload and view media.</p>
+    <header>
+        <h1>Welcome to Our Group Website</h1>
+        <p>This is a simple website where we can upload and view media.</p>
+    </header>
 
-    <a href="{{ url_for('register') }}">Register</a> | 
-    <a href="{{ url_for('login') }}">Login</a>
+    <nav>
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('login') }}">Login</a>
+    </nav>
+
+    <footer>
+        <p>&copy; 2025 Group Media Upload. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
