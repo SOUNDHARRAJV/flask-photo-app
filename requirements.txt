@@ -1,3 +1,4 @@
+pip==25.0
 absl-py==2.1.0
 astunparse==1.6.3
 blinker==1.9.0
@@ -47,7 +48,7 @@ tensorboard==2.18.0
 tensorboard-data-server==0.7.2
 tensorflow==2.18.0
 tensorflow-io-gcs-filesystem==0.31.0
-tensorflow_intel==2.18.0
+tensorflow==2.10.0
 termcolor==2.5.0
 tf_keras==2.18.0
 tokenizers==0.21.0
