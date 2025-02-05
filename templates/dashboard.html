@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header */
+        h1 {
+            color: #4CAF50;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+            font-size: 18px;
+        }
+
+        /* Upload Section */
+        .upload-section {
+            background: linear-gradient(135deg, #ff6f61, #ffcc66);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        .upload-section h2 {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .upload-section input[type="file"] {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .upload-section button {
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .upload-section button:hover {
+            background-color: #0056b3;
+        }
+
+        /* File Gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .file-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .file-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .file-card img, .file-card video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .file-card .file-info {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .delete-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .delete-btn:hover {
+            background: darkred;
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 25px;
+            background: #ff6f61;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background: #ff3d2e;
+        }
+
+        /* Lightbox Styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .upload-section {
+                padding: 15px;
+            }
+
+            .upload-section h2 {
+                font-size: 20px;
+            }
+
+            .upload-section button {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+
+            .logout-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Welcome, {{ username }}</h1>
+        <p>You are logged in!</p>
+
+        <!-- File Upload Section -->
+        <div class="upload-section">
+            <h2>Upload a File</h2>
+            <form method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+
+        <h2>Uploaded Files</h2>
+        <div class="gallery">
+            {% for file in files %}
+                <div class="file-card">
+                    {% if file.endswith(('jpg', 'jpeg', 'png', 'gif')) %}
+                        <img src="{{ url_for('uploaded_file', filename=file) }}" alt="Image" onclick="openLightbox('{{ url_for('uploaded_file', filename=file) }}')">
+                    {% elif file.endswith(('mp3', 'wav')) %}
+                        <audio controls>
+                            <source src="{{ url_for('uploaded_file', filename=file) }}" type="audio/mp3">
+                        </audio>
+                    {% elif file.endswith('mp4') %}
+                        <video controls>
+                            <source src="{{ url_for('uploaded_file', filename=file) }}" type="video/mp4">
+                        </video>
+                    {% endif %}
+                    <div class="file-info">
+                        <p>{{ file }}</p>
+                        <!-- Delete File Form -->
+                        <form action="{{ url_for('delete_file', filename=file) }}" method="POST">
+                            <button type="submit" class="delete-btn">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <a class="logout-btn" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightboxImage" src="" alt="Enlarged Image">
+    </div>
+
+    <script>
+        // Open the lightbox
+        function openLightbox(imageSrc) {
+            document.getElementById('lightbox').style.display = 'flex';
+            document.getElementById('lightboxImage').src = imageSrc;
+        }
+
+        // Close the lightbox
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
