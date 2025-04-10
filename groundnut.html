@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRK Farms - Watermelon Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Full height of viewport */
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            max-width: 1200px; /* Responsive max width */
+            padding: 20px; /* Added padding */
+            flex-grow: 1; /* Container expands to fill available space */
+        }
+
+        header {
+            background-color: #27ae60;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em; /* Increased font size */
+        }
+
+        .product-detail {
+            display: flex;
+            margin-top: 40px;
+            border: 1px solid #ccc; /* Added border */
+            border-radius: 8px; /* Rounded corners */
+            background-color: white; /* White background */
+            overflow: hidden; /* Prevent overflow */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        .product-detail img {
+            width: 40%;
+            object-fit: cover; /* Cover the area */
+            transition: transform 0.2s; /* Smooth zoom effect */
+        }
+
+        .product-detail img:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+
+        .product-info {
+            width: 60%;
+            padding: 20px; /* Added padding */
+        }
+
+        .product-info h2 {
+            margin-bottom: 20px;
+            color: #27ae60;
+            font-size: 2em; /* Increased font size */
+        }
+
+        .product-info p {
+            margin-bottom: 20px;
+            line-height: 1.6; /* Improved readability */
+        }
+
+        .whatsapp-btn {
+            background-color: #25d366;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s; /* Transition effect */
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #12be6e; /* Darker green on hover */
+        }
+
+        .back-btn {
+            background-color: #ccc;
+            color: black;
+            padding: 15px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s; /* Transition effect */
+        }
+
+        .back-btn:hover {
+            background-color: #bbb; /* Darker gray on hover */
+        }
+
+        .social-media {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5em; /* Increased icon size */
+            color: #27ae60; /* Icon color */
+            transition: color 0.3s; /* Transition effect */
+        }
+
+        .social-media a:hover {
+            color: #1e9e4a; /* Darker green on hover */
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px; /* Rounded corners */
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 100; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Watermelon - SRK Farms</h1>
+    </header>
+    
+    <div class="container">
+        <div class="product-detail">
+            <img src="gnut.jpeg" alt="Watermelon">
+            <div class="product-info">
+                <h2>Organic Groundnuts</h2>
+                <p>Our Groundnuts are cultivated using natural methods, ensuring superior quality, taste, and nutrition. Ideal for snacking or use in cooking.</p>
+                <p><strong>Price:</strong> ₹50 per kg</p>
+                <h3>Note: Price varies depending on market conditions</h3>
+                
+                <!-- Quantity Selection -->
+                <label for="quantity">Select Quantity:</label>
+                <input type="number" id="quantity" value="1" min="1" style="margin-bottom: 15px;">
+                <div>
+                    <a id="whatsapp-link" class="whatsapp-btn" target="_blank">Order via WhatsApp</a>
+                </div>
+                <a href="srkcoconut.html#products" class="back-btn">Back to Products</a>
+                <button id="serviceable-pincodes-btn" class="back-btn">Serviceable Pincodes</button>
+            </div>
+            
+        </div>
+
+        <div class="social-media">
+            <h3>Follow Us On</h3>
+            <a href="https://www.facebook.com/" target="_blank">ⓕ</a>
+            <a href="https://twitter.com/" target="_blank">🐦</a>
+            <a href="https://www.instagram.com/" target="_blank">🅾</a>
+            <a href="https://www.linkedin.com/" target="_blank">🔗</a>
+        </div>
+    </div>
+
+    <!-- Modal for Serviceable Pincodes -->
+    <div id="pincodeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Serviceable Pincodes</h2>
+            <ul>
+                <li>600001</li>
+                <li>600002</li>
+                <li>600003</li>
+                <li>600004</li>
+                <li>600005</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 SRK Farms. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const whatsappLink = document.getElementById('whatsapp-link');
+        const quantityInput = document.getElementById('quantity');
+    
+        whatsappLink.onclick = function() {
+            const quantity = quantityInput.value;
+            const message = `I want to place an order for Ground Nut - Quantity[Kg]: ${quantity}`; // Update message for Watermelon
+            whatsappLink.href = `https://wa.me/916380831039?text=${encodeURIComponent(message)}`;
+        };
+    
+        // Get the modal
+        var modal = document.getElementById("pincodeModal");
+    
+        // Get the button that opens the modal
+        var btn = document.getElementById("serviceable-pincodes-btn");
+    
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+    
+        // When the user clicks the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+    
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+    
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    
+</body>
+</html>

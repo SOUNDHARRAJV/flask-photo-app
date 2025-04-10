@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Launch Announcement</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: white;
+            margin: 0; /* Remove default margin */
+            height: 100vh; /* Full height */
+            display: flex; /* Use Flexbox */
+            flex-direction: column; /* Stack children vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            overflow: hidden; /* Prevent scroll */
+            background: linear-gradient(45deg, 
+                #FF5733, #FFBD33, #DBFF33, #75FF33, #33FF57, 
+                #33FFBD, #33DBFF, #3375FF, #3357FF, #6A33FF,
+                #A833FF, #DB33FF, #FF33B5, #FF3357, #FF3333,
+                #FF5733, #FFC300, #DAF7A6, #FFC300, #C70039,
+                #900C3F, #581845, #FFC300);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% 100%; }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            opacity: 0; /* Start hidden */
+            transform: translateY(-50px); /* Start above */
+            animation: fadeInUp 1s forwards 1s; /* Fade in effect */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Add shadow for depth */
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            opacity: 0; /* Start hidden */
+            transform: translateY(-30px); /* Start above */
+            animation: fadeInUp 1s forwards 1.5s; /* Fade in effect */
+            text-align: center; /* Center text alignment */
+        }
+
+        .launch-button {
+            display: inline-block; /* Make it behave like a button */
+            background-color: #007bff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            text-decoration: none; /* Remove underline */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .launch-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .launch-button:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1; /* Fully visible */
+                transform: translateY(0); /* Move to original position */
+                filter: blur(0); /* Remove blur effect */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Thanks For Being Here!</h1>
+    <p id="message">Our products will be made available for you from May 2025.</p>
+    <p>We appreciate your patience</p>
+    <a href="srkcoconut.html" class="launch-button">Check Out Our Product List!</a>
+
+    <script>
+        // No need for JavaScript since we are redirecting
+    </script>
+</body>
+</html>

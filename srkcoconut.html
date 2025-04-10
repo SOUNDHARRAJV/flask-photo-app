@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRK Farms - Fresh Coconut, Groundnut & Watermelon</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Updated Header Styles */
+        header {
+            background: linear-gradient(to right, #4CAF50, #81C784); /* Fresh gradient */
+            padding: 10px 0;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            margin-left: 0.5cm; /* Shift the logo 0.5 cm to the right */
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            margin-right: 20px;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700; /* Hover effect */
+            transform: scale(1.05);
+        }
+
+        /* Updated Hero Section */
+       /* Updated Hero Section */
+/* Updated Hero Section */
+.hero {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+    overflow: hidden; /* Prevents overflow from the video */
+    text-align: center;
+}
+
+.hero video {
+    position: absolute; /* Position the video behind the text */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the section */
+    z-index: 1; /* Set video behind text */
+}
+
+.container {
+    position: relative; /* Ensure the text is above the video */
+    z-index: 2; /* Text above the video */
+    text-align: center; /* Center align text */
+}
+
+/* Larger text for the hero heading and paragraph */
+.hero h2 {
+    font-size: 4.5em; /* Larger font size for the heading */
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #fff;
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5); /* Add shadow for contrast */
+    z-index: 2;
+    animation: fadeInUp 2s ease-out;
+}
+
+.hero p {
+    font-size: 2em; /* Larger font size for the paragraph */
+    color: #fff;
+    margin-top: 10px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for better readability */
+    animation: fadeInUp 2.5s ease-out;
+}
+
+.container {
+    position: relative; /* Ensure the text is above the video */
+    z-index: 2; /* Text above the video */
+    text-align: center; /* Center align text */
+}
+
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta {
+    display: none; /* Initially hidden */
+    opacity: 0; /* Start with 0 opacity */
+    transition: opacity 1s ease; /* Transition effect */
+    background: #ffe601; /* Single solid color */
+    color: #333;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Removed hover effect */
+
+
+
+        /* Product Section */
+        .products {
+            padding: 60px 0;
+            text-align: center;
+            background-color: #fff; /* Ensure there's a background to distinguish it */
+        }
+
+        .products h2 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+
+        .product-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .product-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+            object-fit: cover;
+            transition: transform 0.2s;
+        }
+
+        .product-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .product-item h3 {
+            margin: 10px 0;
+            font-size: 1.5em;
+        }
+
+        .product-item p {
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #27ae60;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background: #1e9e4a;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 100; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 600px;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #232f3e;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer ul {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        footer ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer ul li a:hover {
+            color: #f0c14b;
+        }
+        /* About Section */
+.about {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.about p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    margin: 20px 0;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.contact p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+}
+
+.contact a {
+    color: #27ae60;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1 class="logo">SRK Farms</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+   <!-- Hero Section -->
+<section id="home" class="hero">
+    <video autoplay muted loop id="heroVideo">
+        <source src="1560989-hd_1280_720_30fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="container">
+        <h2 class="typing-effect">Fresh from Our Farm to Your Home</h2>
+        <p class="typing-effect-paragraph">Pure, natural, and fresh products – grown with love at SRK Farms</p>
+        <h3 href="#products" class="cta" id="serviceable-pincodes-btn"> Shop Now!</h3>
+    </div>
+</section>
+
+    <script>
+        // JavaScript to create a one-time typing effect without blinking
+        const typingEffectElement = document.querySelector('.typing-effect');
+        const paragraphEffectElement = document.querySelector('.typing-effect-paragraph');
+
+        const textContent = typingEffectElement.textContent;
+        const paragraphContent = paragraphEffectElement.textContent;
+
+        typingEffectElement.textContent = '';
+        paragraphEffectElement.textContent = '';
+
+        let index = 0;
+        let paragraphIndex = 0;
+
+        function type() {
+            if (index < textContent.length) {
+                typingEffectElement.textContent += textContent.charAt(index);
+                index++;
+                setTimeout(type, 100); // Adjust typing speed here (100 ms)
+            } else {
+                // Once the heading is done typing, start typing the paragraph
+                typeParagraph();
+            }
+        }
+
+        function typeParagraph() {
+            if (paragraphIndex < paragraphContent.length) {
+                paragraphEffectElement.textContent += paragraphContent.charAt(paragraphIndex);
+                paragraphIndex++;
+                setTimeout(typeParagraph, 100); // Adjust typing speed here (100 ms)
+            }
+        }
+
+        // Call the type function when the page loads
+        window.onload = function () {
+            type();
+        };
+    </script>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <div class="product-item">
+                    <img src="th.jpeg" alt="Coconut">
+                    <h3>Coconut</h3>
+                    <p>Fresh and natural coconuts, straight from our farm.</p>
+                    <a href="coconut.html" class="btn">Buy Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="tender.jpeg" alt="Tender Coconut">
+                    <h3>Tender Coconut</h3>
+                    <p>Refreshing tender coconut water for hydration.</p>
+                    <a href="tendercoconut.html" class="btn">Buy Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="oil.jpeg" alt="Coconut Oil">
+                    <h3>Coconut Oil</h3>
+                    <p>Organic coconut oil, perfect for cooking.</p>
+                    <a href="cocooil.html" class="btn">Buy Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="groundnut.jpeg" alt="Groundnut">
+                    <h3>Groundnut</h3>
+                    <p>Organic groundnuts grown in fertile soil.</p>
+                    <a href="groundnut.html" class="btn">Buy Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="groundnutoil.jpeg" alt="Groundnut Oil">
+                    <h3>Groundnut Oil</h3>
+                    <p>Pure groundnut oil, extracted with care.</p>
+                    <a href="groundnut-oil.html" class="btn">Buy Now</a>
+                </div>
+                <div class="product-item">
+                    <img src="water melon.jpeg" alt="Watermelon">
+                    <h3>Watermelon</h3>
+                    <p>Sweet and juicy watermelon, perfect for summer.</p>
+                    <a href="watermelon.html" class="btn">Buy Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Serviceable Pincodes -->
+    <div id="pincodeModal" class="modal">
+        <div class="modal-content">
+        
+           
+        </div>
+    </div>
+<!-- About Section -->
+<section id="about" class="about">
+    <div class="container">
+        <h2>About SRK Farms</h2>
+        <p>
+            At SRK Farms, we are dedicated to delivering the freshest, most natural products straight from our farm to your home. Our farm specializes in growing and nurturing coconut, groundnut, watermelon, and other natural products using sustainable farming methods. We believe in quality and health, ensuring that everything we grow is pure, organic, and filled with nature’s goodness.
+        </p>
+        <p>
+            With a commitment to sustainability and healthy living, we work towards providing you with products that are as close to nature as possible. Our vision is to build a better, healthier future, one crop at a time.
+        </p>
+    </div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>
+            We'd love to hear from you! If you have any questions about our products or want to place an order, feel free to get in touch.
+        </p>
+        <p>Email: <a href="soundharraj122005@gmail.com">soundharraj122005@gmail.com</a></p>
+        <p>Phone: +91 63808 31039</p>
+        <p>Address: SRK Farms, 133 Vembagi Thottam, Pongalur, TN</p>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 SRK Farms. All Rights Reserved.</p>
+            <ul>
+                <li><a href="#home">Facebook</a></li>
+                <li><a href="#products">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+       document.getElementById('serviceable-pincodes-btn').addEventListener('click', function () {
+    document.querySelector('#products').scrollIntoView({
+        behavior: 'smooth'
+    });
+});
+
+        // Show the button after 10 seconds
+// Show the button after 10 seconds
+setTimeout(() => {
+    const button = document.getElementById('serviceable-pincodes-btn');
+    button.style.display = 'inline-block'; // Set display to block
+    setTimeout(() => {
+        button.style.opacity = 1; // Fade in effect
+    }, 10); // Short delay to allow display change to take effect
+}, 11000); // 10 seconds
+
+    </script>
+</body>
+
+</html>
